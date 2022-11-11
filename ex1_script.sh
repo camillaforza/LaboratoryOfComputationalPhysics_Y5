@@ -23,14 +23,14 @@ do
 	echo "$i	$cnt"
 done 
 
-#1d -> To finish
+#1d
 
 letter=0
 most=0
 for i in {a..z}
 do
-	cnt=$(grep -c "$i" LCP_22-23_students.csv)
-	if [ $cnt -gl $most ]
+	cnt=$(grep -o "$i" LCP_22-23_students.csv | wc -l)
+	if [ $cnt -gt $most ]
 	then
 		most=$cnt
 		letter=$i
@@ -38,4 +38,6 @@ do
 done	
 echo "The letter with most counts is: $letter 	with $most counts"
 
-		
+#1e -> To finish
+
+
